@@ -39,7 +39,6 @@ class App extends Component {
                 {user.name} - {user.age}
               </li>
             ); */
-            return <UserList user={user} />;
           })}
         </ul>
         {JSON.stringify(users)}

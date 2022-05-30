@@ -34,12 +34,11 @@ class App extends Component {
         <ul>
           <li>name-age</li>
           {users.map((user) => {
-            /* return (
-              <li key={user.id}>
+            return (
+              <li>
                 {user.name} - {user.age}
               </li>
-            ); */
-            return <UserList user={user} />;
+            );
           })}
         </ul>
         {JSON.stringify(users)}

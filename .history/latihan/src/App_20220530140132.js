@@ -7,17 +7,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      id: 1,
       name: "Adi",
       age: "22",
       users: [
         {
-          id: 2,
           name: "Tama",
           age: "21",
         },
         {
-          id: 3,
           name: "Set",
           age: "23",
         },
@@ -31,18 +28,8 @@ class App extends Component {
       <div>
         <h1>Hello, {name}</h1>
         <h1>{age}</h1>
-        <ul>
-          <li>name-age</li>
-          {users.map((user) => {
-            /* return (
-              <li key={user.id}>
-                {user.name} - {user.age}
-              </li>
-            ); */
-            return <UserList user={user} />;
-          })}
-        </ul>
-        {JSON.stringify(users)}
+        {/* {JSON.stringify(users)} */}
+        <userList />
       </div>
     );
   }

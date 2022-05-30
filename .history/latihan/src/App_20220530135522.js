@@ -1,23 +1,19 @@
 // import logo from './logo.svg';
 import "./App.css";
 import React, { Component } from "react";
-import UserList from "./component/UserList";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      id: 1,
       name: "Adi",
       age: "22",
       users: [
         {
-          id: 2,
           name: "Tama",
           age: "21",
         },
         {
-          id: 3,
           name: "Set",
           age: "23",
         },
@@ -25,24 +21,13 @@ class App extends Component {
     };
   }
   render() {
-    const { name, age, users } = this.state;
-    // console.log("users", users);
+    const { name, age } = this.state;
+
     return (
       <div>
         <h1>Hello, {name}</h1>
         <h1>{age}</h1>
-        <ul>
-          <li>name-age</li>
-          {users.map((user) => {
-            /* return (
-              <li key={user.id}>
-                {user.name} - {user.age}
-              </li>
-            ); */
-            return <UserList user={user} />;
-          })}
-        </ul>
-        {JSON.stringify(users)}
+        
       </div>
     );
   }
