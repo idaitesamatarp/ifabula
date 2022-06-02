@@ -29,7 +29,7 @@ class App extends Component {
     // console.log("users", users);
     return (
       <div>
-        <h1 className="text-3xl font-bold underline">Hello, {name}</h1>
+        <h1>Hello, {name}</h1>
         <h1>{age}</h1>
         <ul>
           <li>name-age</li>
@@ -39,7 +39,9 @@ class App extends Component {
                 {user.name} - {user.age}
               </li>
             ); */
-            return <UserList user={user} />;
+            return (
+              <UserList user={user} className="text-3xl font-bold underline" />
+            );
           })}
         </ul>
         {JSON.stringify(users)}
