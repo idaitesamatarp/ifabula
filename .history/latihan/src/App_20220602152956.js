@@ -108,9 +108,9 @@ function App() {
           </a>
           <button onClick={() => handleClick()}>Click Me</button>
           {/* {JSON.stringify(todos)} */}
-          {/* {todos.map((todo) => {
+          {todos.map((todo) => {
             return <li key={todo.id}>{todo.title}</li>;
-          })} */}
+          })}
         </header>
       </div>
       <Routes>

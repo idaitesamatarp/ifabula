@@ -5,8 +5,8 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./component/Navbar";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./views/Home";
-import About from "./views/About";
+
+
 
 // class App extends Component {
 //   constructor() {
@@ -90,34 +90,28 @@ function App() {
       });
   };
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hai {name} and Count: {count}.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <button onClick={() => handleClick()}>Click Me</button>
-          {/* {JSON.stringify(todos)} */}
-          {/* {todos.map((todo) => {
-            return <li key={todo.id}>{todo.title}</li>;
-          })} */}
-        </header>
-      </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="App">
+      <Navbar />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Hai {name} and Count: {count}.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        <button onClick={() => handleClick()}>Click Me</button>
+        {/* {JSON.stringify(todos)} */}
+        {todos.map((todo) => {
+          return <li key={todo.id}>{todo.title}</li>;
+        })}
+      </header>
+    </div>
   );
 }
 

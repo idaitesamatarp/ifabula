@@ -91,33 +91,39 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hai {name} and Count: {count}.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <button onClick={() => handleClick()}>Click Me</button>
-          {/* {JSON.stringify(todos)} */}
-          {/* {todos.map((todo) => {
-            return <li key={todo.id}>{todo.title}</li>;
-          })} */}
-        </header>
-      </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />}>
+            <Route path=":teamId" element={<Team />} />
+            <Route path="new" element={<NewTeamForm />} />
+            <Route index element={<LeagueStandings />} />
+          </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
+    // <div className="App">
+    //   <Navbar />
+    //   <header className="App-header">
+    //     <img src={logo} className="App-logo" alt="logo" />
+    //     <p>
+    //       Hai {name} and Count: {count}.
+    //     </p>
+    //     <a
+    //       className="App-link"
+    //       href="https://reactjs.org"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       Learn React
+    //     </a>
+    //     <button onClick={() => handleClick()}>Click Me</button>
+    //     {/* {JSON.stringify(todos)} */}
+    //     {todos.map((todo) => {
+    //       return <li key={todo.id}>{todo.title}</li>;
+    //     })}
+    //   </header>
+    // </div>
   );
 }
 

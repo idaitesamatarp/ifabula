@@ -92,7 +92,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
+        
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -108,9 +108,9 @@ function App() {
           </a>
           <button onClick={() => handleClick()}>Click Me</button>
           {/* {JSON.stringify(todos)} */}
-          {/* {todos.map((todo) => {
+          {todos.map((todo) => {
             return <li key={todo.id}>{todo.title}</li>;
-          })} */}
+          })}
         </header>
       </div>
       <Routes>
