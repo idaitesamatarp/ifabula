@@ -51,38 +51,28 @@ function App() {
   let [count, setCount] = useState(0);
   let [name, setName] = useState("Adi");
   let [updated, setUpdated] = useState(false);
-  let [todos, setTodos] = useState([]);
 
   const handleClick = () => {
     setCount(count + 1);
   };
 
   useEffect(() => {
-    // if (updated) {
-    //   setName("Set " + count);
-    // }
-    // setUpdated(true);
+    if (updated) {
+      setName("Set " + count);
+    }
+    setUpdated(true);
 
-    // if (count === 5) {
-    //   alert("Udah diklik 5x");
-    // }
-
+    if (count === 5) {
+      alert("Udah diklik 5x");
+    }
     // fetch API => Dapat dari backend
     // setTodos(arrayTodos) => [] => {todos}
     // fetch Kumpulan User
-    fetchTodo();
-  }, []);
+  }, [count]);
 
   const fetchTodo = () => {
     fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((res) => res.json())
-      .then((data) => {
-        setTodos(data);
-        // console.log("data", data);
-      })
-      .catch((err) => {
-        console.log("err", err);
-      });
+    .then(res => res.json())
   };
   return (
     <div className="App">
@@ -100,10 +90,7 @@ function App() {
           Learn React
         </a>
         <button onClick={() => handleClick()}>Click Me</button>
-        {/* {JSON.stringify(todos)} */}
-        {todos.map((todo) => {
-          return <li key={todo.id}>{todo.title}</li>;
-        })}
+        <li></li>
       </header>
     </div>
   );

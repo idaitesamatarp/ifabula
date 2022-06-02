@@ -100,10 +100,8 @@ function App() {
           Learn React
         </a>
         <button onClick={() => handleClick()}>Click Me</button>
-        {/* {JSON.stringify(todos)} */}
-        {todos.map((todo) => {
-          return <li key={todo.id}>{todo.title}</li>;
-        })}
+        J
+        <li></li>
       </header>
     </div>
   );

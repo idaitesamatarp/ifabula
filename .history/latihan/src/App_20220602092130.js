@@ -1,7 +1,7 @@
-import logo from "./logo.svg";
+// import logo from './logo.svg';
 import "./App.css";
-import React, { useState, useEffect } from "react";
-// import UserList from "./component/UserList";
+import React, { Component } from "react";
+import UserList from "./component/UserList";
 
 // class App extends Component {
 //   constructor() {
@@ -47,49 +47,13 @@ import React, { useState, useEffect } from "react";
 //   }
 // }
 
-function App() {
-  let [count, setCount] = useState(0);
-  let [name, setName] = useState("Adi");
-  let [updated, setUpdated] = useState(false);
-  let [todos, setTodos] = useState([]);
-
-  const handleClick = () => {
-    setCount(count + 1);
-  };
-
-  useEffect(() => {
-    // if (updated) {
-    //   setName("Set " + count);
-    // }
-    // setUpdated(true);
-
-    // if (count === 5) {
-    //   alert("Udah diklik 5x");
-    // }
-
-    // fetch API => Dapat dari backend
-    // setTodos(arrayTodos) => [] => {todos}
-    // fetch Kumpulan User
-    fetchTodo();
-  }, []);
-
-  const fetchTodo = () => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((res) => res.json())
-      .then((data) => {
-        setTodos(data);
-        // console.log("data", data);
-      })
-      .catch((err) => {
-        console.log("err", err);
-      });
-  };
+/* function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hai {name} and Count: {count}.
+          Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -99,14 +63,9 @@ function App() {
         >
           Learn React
         </a>
-        <button onClick={() => handleClick()}>Click Me</button>
-        {/* {JSON.stringify(todos)} */}
-        {todos.map((todo) => {
-          return <li key={todo.id}>{todo.title}</li>;
-        })}
       </header>
     </div>
   );
-}
+} */
 
 export default App;

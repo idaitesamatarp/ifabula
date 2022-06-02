@@ -51,7 +51,6 @@ function App() {
   let [count, setCount] = useState(0);
   let [name, setName] = useState("Adi");
   let [updated, setUpdated] = useState(false);
-  let [todos, setTodos] = useState([]);
 
   const handleClick = () => {
     setCount(count + 1);
@@ -77,8 +76,7 @@ function App() {
     fetch("https://jsonplaceholder.typicode.com/todos")
       .then((res) => res.json())
       .then((data) => {
-        setTodos(data);
-        // console.log("data", data);
+        console.log("data", data);
       })
       .catch((err) => {
         console.log("err", err);
@@ -100,10 +98,7 @@ function App() {
           Learn React
         </a>
         <button onClick={() => handleClick()}>Click Me</button>
-        {/* {JSON.stringify(todos)} */}
-        {todos.map((todo) => {
-          return <li key={todo.id}>{todo.title}</li>;
-        })}
+        <li></li>
       </header>
     </div>
   );
