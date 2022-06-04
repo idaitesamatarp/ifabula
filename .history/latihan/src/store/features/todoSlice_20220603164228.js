@@ -1,16 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getTodos = createAsyncThunk("todos/getTodos", async () => {
-  return (
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((res) => res.json())
-      // .then((data) => {
-      //   console.log("data", data);
-      // })
-      .catch((err) => {
-        console.log("err", err);
-      })
-  );
+  return fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((res) => {
+      res.json();
+    })
+    .catch((err) => {
+      console.log("err", err);
+    });
 });
 
 const TodoSlice = createSlice({
@@ -20,7 +17,7 @@ const TodoSlice = createSlice({
     loading: false,
   },
   extraReducers: {
-    [getTodos.pending]: (state) => {
+    getTodos.pending: (state) => {
       state.loading = true;
     },
     [getTodos.fulfilled]: (state, action) => {

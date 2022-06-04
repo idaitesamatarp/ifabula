@@ -10,6 +10,7 @@ export default function Home() {
   let navigates = useNavigate();
 
   const {Todos} = useSelector((state) => state.Todos)
+  console.log('Todo', Todos)
 
   useEffect(() => {
     dispatch(getTodos())
@@ -20,11 +21,11 @@ export default function Home() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <button className="btn btn-primary" onClick={()=>navigates('/about')}>Go To About</button>
-        {
+        {/* {
           Todos.map(todo => {
             return <li key={todo.id}>{todo.title}</li>
           })
-        }
+        } */}
       </header>
     </div>
   )

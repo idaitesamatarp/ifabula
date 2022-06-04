@@ -10,6 +10,7 @@ export default function Home() {
   let navigates = useNavigate();
 
   const {Todos} = useSelector((state) => state.Todos)
+  // console.log('Todo', Todos)
 
   useEffect(() => {
     dispatch(getTodos())
