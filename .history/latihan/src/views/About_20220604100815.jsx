@@ -20,22 +20,24 @@ export default function About() {
       <Link to="/" className="btn btn-danger">
         Go To Home
       </Link>
-      <div className="columns-3 columns-xs">
-        {Meals.meals.map((meal) => {
-          return (
-            <div className="text-center">
+      <div className="columns-3">
+        
+      </div>
+      {Meals.meals.map((meal) => {
+        return (
+          <div className="text-center">
               <img
                 class="w-24 h-24 rounded-full mx-auto"
                 src={meal.strMealThumb}
                 alt=""
-                width="400"
+                width="384"
                 height="512"
               ></img>
               <div class="text-sky-500 dark:text-sky-400">{meal.strMeal}</div>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

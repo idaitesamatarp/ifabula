@@ -28,7 +28,7 @@ export default function About() {
                 class="w-24 h-24 rounded-full mx-auto"
                 src={meal.strMealThumb}
                 alt=""
-                width="400"
+                width="384"
                 height="512"
               ></img>
               <div class="text-sky-500 dark:text-sky-400">{meal.strMeal}</div>
